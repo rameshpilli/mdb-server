@@ -28,7 +28,7 @@ from langchain_core.outputs import (
     ChatGeneration,
     ChatResult,
 )
-from pydantic import model_validator
+from pydantic import ConfigDict, model_validator
 
 from mindsdb.interfaces.agents.constants import USER_COLUMN
 from mindsdb.utilities.config import config
@@ -69,10 +69,11 @@ class ChatMindsdb(BaseChatModel):
     model_info: Optional[dict] = None
     project_datanode: Optional[Any] = None
 
-    class Config:
-        """Configuration for this pydantic object."""
-        arbitrary_types_allowed = True
-        allow_reuse = True
+    model_config = ConfigDict(
+        protected_namespaces=(),
+        arbitrary_types_allowed=True,
+        allow_reuse=True
+    )
 
     @property
     def _default_params(self) -> Dict[str, Any]:
