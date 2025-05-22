@@ -966,7 +966,8 @@
                   "faqs/persist-predictions",
                   "faqs/mindsdb-with-php",
                   "faqs/disposable-email-doman-and-openai",
-                  "faqs/missing-required-cpu-features"
+                  "faqs/missing-required-cpu-features",
+                  "faqs/ssl-certificate-verify-failed"
                 ]
               }
             ]
