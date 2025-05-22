@@ -108,7 +108,7 @@ async def run_query(sql: str):
         },
     )
     result = snowflake_db.query(sql).fetch()
-    print(result)
+    logger.info("Query result: %s", result)
 
 
 async def main():
