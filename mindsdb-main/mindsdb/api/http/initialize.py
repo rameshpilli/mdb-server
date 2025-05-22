@@ -8,6 +8,7 @@ from pathlib import Path
 from http import HTTPStatus
 
 import requests
+import certifi
 from flask import Flask, url_for, make_response, request, send_from_directory
 from flask.json import dumps
 from flask_compress import Compress
@@ -92,7 +93,17 @@ def custom_output_json(data, code, headers=None):
 def get_last_compatible_gui_version() -> Version:
     logger.debug("Getting last compatible frontend..")
     try:
-        res = requests.get('https://mindsdb-web-builds.s3.amazonaws.com/compatible-config.json', timeout=5)
+        res = requests.get(
+            'https://mindsdb-web-builds.s3.amazonaws.com/compatible-config.json',
+            timeout=5,
+            verify=certifi.where()
+        )
+    except requests.exceptions.SSLError as e:
+        logger.error(
+            "SSL verification failed while fetching compatible-config.json. "
+            "Ensure system certificates are installed or disable GUI autoupdate."
+        )
+        return False
     except (ConnectionError, requests.exceptions.ConnectionError) as e:
         logger.error(f"Is no connection. {e}")
         return False
