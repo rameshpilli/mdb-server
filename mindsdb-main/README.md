@@ -54,6 +54,8 @@ MindsDB is an open-source server that can be deployed anywhere - from your lapto
 
 You can connect to hundreds of [data sources (learn more)](https://docs.mindsdb.com/integrations/data-overview). This is just an example of a Postgres database.
 
+For an overview of how natural language is converted to SQL using a chain of tools, see [docs/tools_chaining.md](docs/tools_chaining.md).
+
 ```sql
 -- Connect to demo postgres DB
 CREATE DATABASE demo_postgres_db
