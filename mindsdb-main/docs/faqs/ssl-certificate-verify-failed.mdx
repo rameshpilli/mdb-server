@@ -1,0 +1,22 @@
+---
+title: SSL Certificate Verification Failed
+sidebarTitle: SSL Certificate Verification Failed
+---
+
+When starting MindsDB, you may see an `SSLCertVerificationError` in the logs if the host operating system is missing certificate authority (CA) certificates.
+
+## Solutions
+
+1. Install the system's CA certificates. If this isn't possible, you can use the certificates provided by the [`certifi`](https://pypi.org/project/certifi/) package:
+   ```bash
+   python -m certifi
+   ```
+   Then set the `SSL_CERT_FILE` environment variable to the path printed above so that Python uses these certificates.
+2. Alternatively, disable GUI autoupdate to prevent MindsDB from attempting to download updates:
+   - In the configuration file set:
+     ```json
+     {
+       "gui": { "autoupdate": false }
+     }
+     ```
+   - Or start MindsDB with the `--no_studio` flag.
