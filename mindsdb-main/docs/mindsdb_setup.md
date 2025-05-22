@@ -66,10 +66,12 @@ You can automate the last step by creating a view or pipeline that passes the ge
 
 ## Test the Snowflake connection
 
-Run the helper script to verify that your `.env` configuration works:
+Run the helper script to verify that your `.env` configuration works. Install
+the script dependencies first:
 
 ```bash
 cd mindsdb-main
+pip install -r scripts/requirements.txt
 python scripts/snowflake_test.py
 ```
 
