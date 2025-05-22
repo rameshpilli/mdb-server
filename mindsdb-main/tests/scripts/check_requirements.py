@@ -47,7 +47,7 @@ MAIN_EXCLUDE_PATHS = [
 # and not explicitly imported in mindsdb.
 # transformers is required for langchain_core and not explicitly imported by mindsdb.
 MAIN_RULE_IGNORES = {
-    "DEP003": ["torch", "pyarrow"],
+    "DEP003": ["torch", "pyarrow", "dataprep_ml"],
     "DEP001": ["torch", "pgvector", "pyarrow", "openai", "gunicorn", "dataprep_ml", "opentelemetry", "langfuse"],
     "DEP002": ["psycopg2-binary", "lark", "transformers", "langchain-experimental", "lxml", "openpyxl", "onnxruntime"]
 }
@@ -192,6 +192,8 @@ PACKAGE_NAME_MAP = {
     "opentelemetry-distro": ["opentelemetry"],
     "sqlalchemy-ingres": ["ingres_sa_dialect"],
     "pyaml": ["yaml"],
+    "mindsdb-sdk": ["mindsdb_sdk"],
+    "python-dotenv": ["dotenv"],
 }
 
 # We use this to exit with a non-zero status code if any check fails
