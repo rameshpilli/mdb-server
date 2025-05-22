@@ -21,6 +21,7 @@ pydantic ~= 2.7.0
 mindsdb-evaluator == 0.0.17
 duckdb ~= 1.2.1
 requests == 2.32.3
+certifi
 dateparser==1.2.0
 dill == 0.3.6
 numpy
