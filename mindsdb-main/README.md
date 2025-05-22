@@ -67,9 +67,28 @@ PARAMETERS = {
   "schema": "demo_data"
 };
 ```
+Once you've connected your data sources, you can [combine](https://docs.mindsdb.com/mindsdb_sql/sql/api/join-on), [slice it, dice it](https://docs.mindsdb.com/mindsdb_sql/sql/api/select), and [transform](https://docs.mindsdb.com/use-cases/data_enrichment/overview) it however your heart desires using good ol' standard SQL [(learn more)](https://docs.mindsdb.com/mindsdb_sql/overview).
 
-Once you've connected your data sources, you can [combine](https://docs.mindsdb.com/mindsdb_sql/sql/api/join-on), [slice it, dice it](https://docs.mindsdb.com/mindsdb_sql/sql/api/select), and [transform](https://docs.mindsdb.com/use-cases/data_enrichment/overview) it however your heart desires using good ol' standard SQL [(learn more)](https://docs.mindsdb.com/mindsdb_sql/overview). 
+### Snowflake Integration
 
+```sql
+-- Connect to Snowflake
+CREATE DATABASE snowflake_ds
+WITH ENGINE = 'snowflake',
+PARAMETERS = {
+  "account": "<account>",
+  "user": "<user>",
+  "password": "<password>",
+  "database": "<database>"
+};
+
+-- Ask for a join of multiple tables in plain English
+SELECT *
+FROM snowflake_ds(
+    "Show each order with the customer's company name and region"
+);
+```
+The text-to-SQL skill automatically generates the joins between the Snowflake tables for this query.
 After you've whipped your data into shape, it's time to build AI that actually learns!
 
 ## Build AI Knowledge
