@@ -15,7 +15,7 @@ def check_for_print_statements():
         - set(["mindsdb/__main__.py"])
     )
 
-    pattern = re.compile("\sprint\(")  # noqa: W605
+    pattern = re.compile(r"\sprint\(")  # noqa: W605
 
     failed_files = []
 
