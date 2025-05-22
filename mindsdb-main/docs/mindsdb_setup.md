@@ -63,3 +63,16 @@ EXECUTE IN snowflake_conn <sql>;
 ```
 
 You can automate the last step by creating a view or pipeline that passes the generated SQL directly to the data source.
+
+## Test the Snowflake connection
+
+Run the helper script to verify that your `.env` configuration works:
+
+```bash
+cd mindsdb-main
+python scripts/snowflake_test.py
+```
+
+The script loads environment variables, obtains an OAuth token for your LLM
+endpoint, generates a SQL statement from a natural language question and then
+executes it against Snowflake using MindsDB.
