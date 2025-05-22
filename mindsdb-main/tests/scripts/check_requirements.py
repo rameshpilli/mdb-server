@@ -5,7 +5,7 @@ import subprocess
 import os
 import json
 
-pattern = '\=|~|>|<| |\n|#|\['  # noqa: W605
+pattern = r"\=|~|>|<| |\n|#|\["  # noqa: W605
 
 
 def get_requirements_from_file(path):
@@ -270,7 +270,7 @@ def check_relative_reqs():
 
     # regex for finding relative imports of handlers like "from ..file_handler import FileHandler"
     # we're going to treat these as errors (and suggest using absolute imports instead)
-    relative_import_pattern = re.compile("(?:\s|^)(?:from|import) \.\.\w+_handler")  # noqa: W605
+    relative_import_pattern = re.compile(r"(?:\s|^)(?:from|import) \.\.\w+_handler")  # noqa: W605
 
     def get_relative_requirements(files):
         """Find entries in a requirements.txt that are including another requirements.txt"""
@@ -290,7 +290,8 @@ def check_relative_reqs():
         # regex for finding imports of other handlers like "from mindsdb.integrations.handlers.file_handler import FileHandler"
         # excludes the current handler importing parts of itself
         import_pattern = re.compile(
-            f"(?:\s|^)(?:from|import) mindsdb\.integrations\.handlers\.(?!{handler_name}_handler)\w+_handler")  # noqa: W605
+            rf"(?:\s|^)(?:from|import) mindsdb\.integrations\.handlers\.(?!{handler_name}_handler)\w+_handler"
+        )  # noqa: W605
 
         # requirements entries for this handler that point to another handler's requirements file
         required_handlers = get_relative_requirements(
