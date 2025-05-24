@@ -163,6 +163,10 @@ COHERE_SERVER_URL=
 COHERE_SERVER_BEARER_TOKEN=
 ```
 
+For a quick example showing how to run an MCP agent with a LiteLLM-compatible
+API server and interactive CLI, see
+[`../minds_db_like_crm/README.md`](../minds_db_like_crm/README.md).
+
 ## Running the Application
 
 ### Option 1: Start Both Servers with Single Command
