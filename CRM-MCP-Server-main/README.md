@@ -2,6 +2,7 @@
 
 This project implements a Model Context Protocol (MCP) server with a Chainlit UI and FastAPI backend that supports agent registration. It allows various tools, resources, and prompt templates to be registered and used by agents.
 
+**See also [`minds_db_like_crm`](../minds_db_like_crm) for a standalone version of this project bundled with the MindsDB MCP Langchain Agent.**
 ## Architecture
 
 The system follows a layered architecture:
