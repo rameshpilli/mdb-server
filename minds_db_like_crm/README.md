@@ -2,7 +2,7 @@
 
 This project implements a Model Context Protocol (MCP) server with a Chainlit UI and FastAPI backend that supports agent registration. It allows various tools, resources, and prompt templates to be registered and used by agents.
 
-**See also [`minds_db_like_crm`](../minds_db_like_crm) for a standalone version of this project bundled with the MindsDB MCP Langchain Agent.**
+**Note:** This directory is a standalone copy of the CRM MCP server, now bundled with MindsDB's MCP Langchain Agent (`mcp_client_agent.py`) and FastAPI/CLI wrappers. Provide your own environment variables when running the tools.
 ## Architecture
 
 The system follows a layered architecture:
@@ -355,3 +355,9 @@ For a more in-depth explanation of the codebase see
 [docs/code_walkthrough.md](docs/code_walkthrough.md).
 For example cURL usage see
 [docs/curl_examples.md](docs/curl_examples.md).
+
+## Using the MindsDB Agent
+
+Run `python litellm_server.py --agent <name>` to expose an OpenAI-compatible FastAPI server.
+Run `python run_mcp_agent.py --agent <name>` for a command-line chat interface.
+The scripts assume a running MindsDB server with the MCP API enabled.
