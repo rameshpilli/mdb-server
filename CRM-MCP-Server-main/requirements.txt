@@ -8,6 +8,7 @@ sse-starlette>=1.6.1
 pydantic>=2.4.2
 python-dotenv>=1.0.0
 python-multipart>=0.0.6
+requests>=2.31.0
 redis>=4.5.0
 pandas>=2.0.0
 click>=8.0.0
@@ -17,6 +18,9 @@ click>=8.0.0
 # ---------------------------------------------------------------------------
 fastmcp>=0.1.0
 openai>=1.0.0
+langchain>=0.3.7
+langchain-openai>=0.3.6
+litellm>=1.17.0
 cohere>=4.32
 # Pin anthropic below 1.0 for Python 3.11 compatibility
 anthropic>=0.5,<1.0.0
