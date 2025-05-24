@@ -33,4 +33,15 @@
 ## Deployment
 - Supports both local and Kubernetes deployment
 - Configuration via environment variables
-- Logging to both CSV and file outputs 
+- Logging to both CSV and file outputs
+
+## Architecture Options
+
+The initial architecture routed Chainlit through FastAPI to `mcp_bridge` and then to the individual tools.
+
+MindsDB now includes an MCP Langchain agent that works with the SQL agent. This provides a more direct path from Chainlit to the underlying data.
+
+### Switching Approaches
+1. Copy `.env.example` to `.env` and supply any credentials. Environment variables are left blank by default.
+2. Start the MCP Langchain agent to use the new flow.
+3. Launch the FastAPI application if you prefer the original `mcp_bridge` pipeline.
