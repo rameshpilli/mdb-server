@@ -50,6 +50,16 @@ MindsDB is an open-source server that can be deployed anywhere - from your lapto
   * [Using Docker](https://docs.mindsdb.com/setup/self-hosted/docker). This is also simple, but gives you more flexibility on how to further customize your server.
   * [Using PyPI](https://docs.mindsdb.com/contribute/install). This option enables you to contribute to MindsDB.
 
+## MindsDB Integration
+
+This repository includes a `mindsdb-main` folder containing the MindsDB server code.
+To get it working locally:
+
+1. Copy `.env.example` to `.env` and add your OAuth and Snowflake credentials.
+2. Run the server and try the `custom_llm` engine.
+
+For full setup instructions see [docs/mindsdb_setup.md](../docs/mindsdb_setup.md).
+
 ## Connect Your Data
 
 You can connect to hundreds of [data sources (learn more)](https://docs.mindsdb.com/integrations/data-overview). This is just an example of a Postgres database.
